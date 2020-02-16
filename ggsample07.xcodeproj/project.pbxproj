@@ -10,7 +10,7 @@
 		7D3AE1B420A0A0C8005799EC /* ggsample07.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7DE045DF150E23DA00D946BA /* ggsample07.vert */; };
 		7D3AE1B520A0A0C8005799EC /* ggsample07.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7DE045DE150E23DA00D946BA /* ggsample07.frag */; };
 		7D407AE120733D4A00722410 /* ggsample07.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D407AE020733D4A00722410 /* ggsample07.cpp */; };
-		7D7AF85F1222C8CC003A0434 /* opengl.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AF85E1222C8CC003A0434 /* opengl.icns */; };
+		7D57105B23F8FCD200856C4B /* gg.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7D57105A23F8FCD200856C4B /* gg.icns */; };
 		7DDB38F81762403900DD546F /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB38F71762403900DD546F /* shader.cpp */; };
 		7DE045B3150E237B00D946BA /* gg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE045B1150E237B00D946BA /* gg.cpp */; };
 		7DE045B5150E238400D946BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE045B4150E238400D946BA /* main.cpp */; };
@@ -20,8 +20,8 @@
 		7D1E90EE1123E36C005E6C75 /* ggsample07.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ggsample07.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1E90F11123E36C005E6C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D407AE020733D4A00722410 /* ggsample07.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = ggsample07.cpp; sourceTree = "<group>"; };
-		7D407AE320733DDA00722410 /* GgApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GgApplication.h; sourceTree = "<group>"; };
-		7D7AF85E1222C8CC003A0434 /* opengl.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = opengl.icns; sourceTree = "<group>"; };
+		7D57105923F8FCBE00856C4B /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		7D57105A23F8FCD200856C4B /* gg.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = gg.icns; sourceTree = "<group>"; };
 		7DDB38F61762401B00DD546F /* shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = shader.h; sourceTree = "<group>"; };
 		7DDB38F71762403900DD546F /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = shader.cpp; sourceTree = "<group>"; };
 		7DE045B1150E237B00D946BA /* gg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = gg.cpp; sourceTree = "<group>"; };
@@ -47,16 +47,16 @@
 			children = (
 				7D407AE020733D4A00722410 /* ggsample07.cpp */,
 				7DE045B4150E238400D946BA /* main.cpp */,
-				7DE045B2150E237B00D946BA /* gg.h */,
+				7D57105923F8FCBE00856C4B /* Window.h */,
 				7DE045B1150E237B00D946BA /* gg.cpp */,
-				7DDB38F61762401B00DD546F /* shader.h */,
+				7DE045B2150E237B00D946BA /* gg.h */,
 				7DDB38F71762403900DD546F /* shader.cpp */,
-				7D407AE320733DDA00722410 /* GgApplication.h */,
+				7DDB38F61762401B00DD546F /* shader.h */,
 				7DE045DF150E23DA00D946BA /* ggsample07.vert */,
 				7DE045DE150E23DA00D946BA /* ggsample07.frag */,
 				7D1E90EF1123E36C005E6C75 /* Products */,
 				7D1E90F11123E36C005E6C75 /* Info.plist */,
-				7D7AF85E1222C8CC003A0434 /* opengl.icns */,
+				7D57105A23F8FCD200856C4B /* gg.icns */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,7 +94,7 @@
 		7D1E90DA1123E2F7005E6C75 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1130;
 			};
 			buildConfigurationList = 7D1E90DD1123E2F7005E6C75 /* Build configuration list for PBXProject "ggsample07" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -122,9 +122,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D57105B23F8FCD200856C4B /* gg.icns in Resources */,
 				7D3AE1B520A0A0C8005799EC /* ggsample07.frag in Resources */,
 				7D3AE1B420A0A0C8005799EC /* ggsample07.vert in Resources */,
-				7D7AF85F1222C8CC003A0434 /* opengl.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +225,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -259,6 +260,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
