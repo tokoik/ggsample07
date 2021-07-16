@@ -3,11 +3,13 @@
 //
 #include "GgApp.h"
 
+// プロジェクト名
+#ifndef PROJECT_NAME
+#  define PROJECT_NAME "ggsample07"
+#endif
+
 // シェーダー関連の処理
 #include "shader.h"
-
-// 標準ライブラリ
-#include <cmath>
 
 // アニメーションの周期（秒）
 constexpr auto cycle{ 5.0 };
@@ -82,8 +84,8 @@ static void makeSphere(float radius, int slices, int stacks,
 //
 int GgApp::main(int argc, const char* const* argv)
 {
-  // ウィンドウを作成する
-  Window window{ "ggsample07" };
+  // ウィンドウを作成する (この行は変更しないでください)
+  Window window{ argc > 1 ? argv[1] : PROJECT_NAME };
 
   // 背景色を指定する
   glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
@@ -93,7 +95,7 @@ int GgApp::main(int argc, const char* const* argv)
   glEnable(GL_CULL_FACE);
 
   // プログラムオブジェクトの作成
-  const auto program{ loadProgram("ggsample07.vert", "pv", "ggsample07.frag", "fc") };
+  const auto program{ loadProgram(PROJECT_NAME ".vert", "pv", PROJECT_NAME ".frag", "fc") };
 
   // in (attribute) 変数のインデックスの検索（見つからなければ -1）
   const auto nvLoc{ glGetAttribLocation(program, "nv") };
