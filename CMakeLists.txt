@@ -85,6 +85,7 @@ if(APPLE)
         MACOSX_BUNDLE_COPYRIGHT "Copyright (c) 2005-2026 Kohe Tokoi. All rights reserved."
         XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "com.yourcompany.${PROJECT_NAME}"
         XCODE_GENERATE_SCHEME ON
+        XCODE_SCHEME_WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
     )
     set_source_files_properties(${SHADER_FILES} PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
     set_source_files_properties(${ICON_FILE} PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
